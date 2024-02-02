@@ -30,6 +30,19 @@ importers:
         specifier: ^3.7.2
         version: 3.7.2(@types/node@20.11.16)(typescript@5.2.2)(vite@5.0.12)
 
+  packages/sample:
+    dependencies:
+      safe-retry:
+        specifier: workspace:*
+        version: link:../safe-retry
+    devDependencies:
+      typescript:
+        specifier: ^5.2.2
+        version: 5.2.2
+      vite:
+        specifier: ^5.0.8
+        version: 5.0.12(@types/node@20.11.16)
+
 packages:
 
   /@babel/helper-string-parser@7.23.4:

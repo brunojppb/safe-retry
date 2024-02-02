@@ -2,7 +2,7 @@ type Options = {
   /** Number of times to retry before bubbling up the error. */
   maxRetries?: number;
   /** Callback to be executed on a retry */
-  onRetry?: () => void;
+  onRetry?: (retryAttempt: number, timeToNextRetry: number) => void;
 };
 
 /**
@@ -11,7 +11,7 @@ type Options = {
  * @param {Promise<T>} promise Promise to be exected which can be retried in case of failures.
  * @param {Options} [options] - Options for configuring retries
  * @param {number} [options.maxRetries] - Number of times to retry before bubbling up the error.
- * @param {() => void} [options.onRetry] - Callback to be executed on a retry
+ * @param {(retryAttempt: number, timeToNextRetry: number) => void} [options.onRetry] - Callback to be executed on a retry
  */
 export function retry<T>(
   promise: () => Promise<T>,
@@ -24,16 +24,10 @@ export function retry<T>(
   // so we can encapsulate the retries and don't expose
   // it to the caller. This is also a recursive function
   async function retryWithBackoff(retries: number): Promise<T> {
+    const timeToWait = 2 ** retries * 100;
     try {
       // Make sure we don't wait on the first attempt
       if (retries > 0) {
-        // Here is where the magic happens.
-        // on every retry, we exponentially increase the time to wait.
-        // Here is how it looks for a `maxRetries` = 4
-        // (2 ** 1) * 100 = 200 ms
-        // (2 ** 2) * 100 = 400 ms
-        // (2 ** 3) * 100 = 800 ms
-        const timeToWait = 2 ** retries * 100;
         console.debug(`waiting for ${timeToWait}ms...`);
         await waitFor(timeToWait);
       }
@@ -42,7 +36,7 @@ export function retry<T>(
       // only retry if we didn't reach the limit
       // otherwise, let the caller handle the error
       if (retries < maxRetries) {
-        onRetry?.();
+        onRetry?.(retries + 1, timeToWait);
         return retryWithBackoff(retries + 1);
       } else {
         console.debug("Max retries reached. Bubbling the error up");
