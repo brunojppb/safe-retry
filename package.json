@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "turbo build",
+    "test": "turbo test",
     "ci": "turbo test build"
   },
   "devDependencies": {
@@ -12,11 +13,11 @@
   },
   "packageManager": "pnpm@8.15.1",
   "engines": {
-    "node": "20.9.0",
+    "node": "21.6.1",
     "pnpm": "8.15.1"
   },
   "volta": {
-    "node": "20.9.0",
+    "node": "21.6.1",
     "pnpm": "8.15.1"
   }
 }

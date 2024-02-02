@@ -24,13 +24,15 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "test": "tsx ./src/index.spec.ts",
     "preview": "vite preview"
   },
   "devDependencies": {
     "@types/node": "20.11.16",
     "typescript": "5.2.2",
     "vite": "5.0.12",
-    "vite-plugin-dts": "^3.7.2"
+    "vite-plugin-dts": "^3.7.2",
+    "tsx": "4.7.0"
   },
   "files": [
     "dist"
