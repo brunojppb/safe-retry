@@ -1,0 +1,41 @@
+{
+  "name": "safe-retry",
+  "private": false,
+  "description": "Type-safe retry with configurable exponential backoff",
+  "author": {
+    "name": "Bruno Paulino",
+    "email": "js@bpaulino.com",
+    "url": "https://bpaulino.com"
+  },
+  "version": "0.0.1",
+  "type": "module",
+  "main": "./dist/safe-retry.umd.cjs",
+  "module": "./dist/safe-retry.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/safe-retry.js",
+      "require": "./dist/safe-retry.umd.cjs"
+    }
+  },
+  "repository": {
+    "url": "https://github.com/brunojppb/safe-retry"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@types/node": "20.11.16",
+    "typescript": "5.2.2",
+    "vite": "5.0.12",
+    "vite-plugin-dts": "^3.7.2"
+  },
+  "files": [
+    "dist"
+  ],
+  "volta": {
+    "extends": "../../package.json"
+  }
+}

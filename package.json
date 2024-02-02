@@ -1,0 +1,22 @@
+{
+  "name": "safe-retry-repo",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "turbo build",
+    "ci": "turbo test build"
+  },
+  "devDependencies": {
+    "turbo": "1.12.2"
+  },
+  "packageManager": "pnpm@8.15.1",
+  "engines": {
+    "node": "20.9.0",
+    "pnpm": "8.15.1"
+  },
+  "volta": {
+    "node": "20.9.0",
+    "pnpm": "8.15.1"
+  }
+}
