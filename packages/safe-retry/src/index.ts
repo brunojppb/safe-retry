@@ -34,7 +34,7 @@ export function retry<T>(
         // (2 ** 2) * 100 = 400 ms
         // (2 ** 3) * 100 = 800 ms
         const timeToWait = 2 ** retries * 100;
-        console.log(`waiting for ${timeToWait}ms...`);
+        console.debug(`waiting for ${timeToWait}ms...`);
         await waitFor(timeToWait);
       }
       return await promise();
@@ -45,7 +45,7 @@ export function retry<T>(
         onRetry?.();
         return retryWithBackoff(retries + 1);
       } else {
-        console.warn("Max retries reached. Bubbling the error up");
+        console.debug("Max retries reached. Bubbling the error up");
         throw e;
       }
     }
