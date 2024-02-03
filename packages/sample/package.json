@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "safe-retry": "workspace:*"
+    "safe-retry": "0.0.1"
   },
   "devDependencies": {
     "typescript": "^5.2.2",

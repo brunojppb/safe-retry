@@ -33,7 +33,7 @@ importers:
   packages/sample:
     dependencies:
       safe-retry:
-        specifier: workspace:*
+        specifier: 0.0.1
         version: link:../safe-retry
     devDependencies:
       typescript:
