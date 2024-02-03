@@ -2,9 +2,15 @@
 
 Type-safe retry function with backoff support.
 
+### Install safe-retry from npm
+
+```shell
+npm install safe-retry --save
+```
+
 ## How to use it
 
-Have a look at the [sample project](<[./packages/sample/src/main.ts](https://github.com/brunojppb/safe-retry/tree/main/packages/sample)>) for a demo,
+Have a look at the [sample project](https://github.com/brunojppb/safe-retry/tree/main/packages/sample) for a demo,
 but here is the minimal usage of the `retry` function:
 
 ```ts
