@@ -2,7 +2,7 @@
   "name": "safe-retry",
   "private": false,
   "description": "Type-safe retry with configurable exponential backoff",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "license": "MIT",
   "author": {
     "name": "Bruno Paulino",
