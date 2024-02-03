@@ -2,6 +2,12 @@
 
 Type-safe retry function with backoff support.
 
+### Install safe-retry from npm
+
+```shell
+npm install safe-retry --save
+```
+
 ## How to use it
 
 Have a look at the [sample project](./packages/sample/src/main.ts) for a demo,
