@@ -17,7 +17,8 @@ export function retry<T>(
   promise: () => Promise<T>,
   options?: Options
 ): Promise<T> {
-  const maxRetries = options?.maxRetries ?? 0;
+  // Retry at least once if no options are given
+  const maxRetries = options?.maxRetries ?? 1;
   const onRetry = options?.onRetry;
 
   // Notice that we declare an inner function here
