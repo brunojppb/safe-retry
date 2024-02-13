@@ -1,6 +1,8 @@
 # safe-retry
 
-Type-safe retry function with backoff support.
+Type-safe retry utility with exponential backoff support.
+For a more in-depth overview on how this can be helpful, read
+the following blogpost: [Retrying API Calls with Exponential Backoff in JavaScript](https://bpaulino.com/entries/retrying-api-calls-with-exponential-backoff).
 
 ### Install safe-retry from npm
 
