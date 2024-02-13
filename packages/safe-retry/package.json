@@ -2,7 +2,7 @@
   "name": "safe-retry",
   "private": false,
   "description": "Type-safe retry with configurable exponential backoff",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "author": {
     "name": "Bruno Paulino",
@@ -12,6 +12,7 @@
   "type": "module",
   "main": "./dist/safe-retry.umd.cjs",
   "module": "./dist/safe-retry.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
