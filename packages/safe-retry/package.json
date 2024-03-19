@@ -16,7 +16,8 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/safe-retry.js"
+      "import": "./dist/safe-retry.js",
+      "require": "./dist/safe-retry.umd.cjs"
     }
   },
   "repository": {
