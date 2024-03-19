@@ -27,11 +27,11 @@ jobs:
           version: "8.15.1"
           run_install: false
       
-      name: Build
-      run: pnpm run build
+      - name: Build
+        run: pnpm run build
 
-      name: install JSR
-      run: pnpm install -g jsr
+      - name: install JSR
+        run: pnpm install -g jsr
 
       - name: Publish package
         run: pnpm --filter="safe-retry" exec jsr publish
